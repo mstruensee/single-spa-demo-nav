@@ -4,9 +4,9 @@ import path from "path";
 import https from "https";
 const importMapFilePath = path.resolve(process.cwd(), "importmap.json");
 const importMap = JSON.parse(fs.readFileSync(importMapFilePath));
-const url = `https://single-spa-demo.s3-us-west-2.amazonaws.com/%40thawkin3/root-config/${process.env.TRAVIS_COMMIT}/root-config.js`;
+const url = `https://wcs-single-spa-demo.s3.amazonaws.com/%40wcs/root-config/${process.env.TRAVIS_COMMIT}/wcs-root-config.js`;
 https
-  .get(url, res => {
+  .get(url, (res) => {
     // HTTP redirects (301, 302, etc) not currently supported, but could be added
     if (res.statusCode >= 200 && res.statusCode < 300) {
       if (
@@ -33,7 +33,7 @@ https
       );
     }
   })
-  .on("error", err => {
+  .on("error", (err) => {
     urlNotDownloadable(url, err);
   });
 function urlNotDownloadable(url, err) {
