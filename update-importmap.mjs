@@ -14,11 +14,11 @@ https
         res.headers["content-type"].toLowerCase().trim() ===
           "application/javascript"
       ) {
-        const moduleName = `@thawkin3/root-config`;
+        const moduleName = `@wcs/root-config`;
         importMap.imports[moduleName] = url;
         fs.writeFileSync(importMapFilePath, JSON.stringify(importMap, null, 2));
         console.log(
-          `Updated import map for module ${moduleName}. New url is ${url}.`
+          `Updated import map for module ${moduleName}. New url is ${url}. => ${importMap}`
         );
       } else {
         urlNotDownloadable(
