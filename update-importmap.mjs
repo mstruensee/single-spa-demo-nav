@@ -5,7 +5,7 @@ import https from "https";
 const importMapFilePath = path.resolve(process.cwd(), "importmap.json");
 const importMap = JSON.parse(fs.readFileSync(importMapFilePath));
 const url = `https://wcs-single-spa-demo.s3.amazonaws.com/%40wcs/nav/${process.env.TRAVIS_COMMIT}/wcs-single-spa-demo-nav.js`;
-import packageJson from "./package.json"
+
 https
   .get(url, (res) => {
     // HTTP redirects (301, 302, etc) not currently supported, but could be added
@@ -15,7 +15,7 @@ https
         res.headers["content-type"].toLowerCase().trim() ===
           "application/javascript"
       ) {
-        const moduleName = packageJson.name;
+        const moduleName = "@wcs/single-spa-demo-nav";
         importMap.imports[moduleName] = url;
         fs.writeFileSync(importMapFilePath, JSON.stringify(importMap, null, 2));
         console.log(
