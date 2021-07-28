@@ -4,7 +4,8 @@ import path from "path";
 import https from "https";
 const importMapFilePath = path.resolve(process.cwd(), "importmap.json");
 const importMap = JSON.parse(fs.readFileSync(importMapFilePath));
-const url = `https://wcs-single-spa-demo.s3.amazonaws.com/%40wcs/root-config/${process.env.TRAVIS_COMMIT}/wcs-root-config.js`;
+const url = `https://wcs-single-spa-demo.s3.amazonaws.com/%40wcs/root-config/61526fd1c61b64a06e45cfd06d9f234e18aac014/wcs-root-config.js`;
+// todo fix that hash in the url
 https
   .get(url, (res) => {
     // HTTP redirects (301, 302, etc) not currently supported, but could be added
