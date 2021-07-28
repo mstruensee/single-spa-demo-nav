@@ -14,3 +14,6 @@
 .link:focus {
     color: #1098f7;
 }
+.body {
+    background-color: red;
+}
