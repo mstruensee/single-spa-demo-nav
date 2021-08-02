@@ -5,15 +5,18 @@
   background: #000;
   color: #fff;
 }
+
 .link {
   margin-right: 20px;
   color: #fff;
   text-decoration: none;
 }
+
 .link:hover,
 .link:focus {
   color: #1098f7;
 }
+
 .body {
   background-color: red;
 }
