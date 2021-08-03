@@ -1,3 +1,3 @@
-import { combineEpics } from "redux-observable"
+import { combineEpics } from "redux-observable";
 
-export const epics = combineEpics()
+export const epics = combineEpics();
