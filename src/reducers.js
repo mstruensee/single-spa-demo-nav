@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-
+import { listReducer } from "@wecreatesoftware/redux-higher-order-reducers";
 import { connectRouter } from "connected-react-router";
 import { history } from "./history";
-import { navbarReducer } from "./navbar/navbar.reducer";
+import { NAVBAR_REDUCER } from "./navbar/navbar.types";
 
 export const reducers = combineReducers({
   router: connectRouter(history),
-  navbar: navbarReducer,
+  navbar: listReducer({
+    reducerName: NAVBAR_REDUCER,
+  }),
 });
