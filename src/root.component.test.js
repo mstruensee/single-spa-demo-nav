@@ -4,6 +4,6 @@ import { RootComponent } from "./root.component";
 describe("Root component", () => {
   it("should be in the document", () => {
     const { getByText } = render(<RootComponent />);
-    expect(getByText(/Page 1/i)).toBeInTheDocument();
+    expect(getByText(/Navbar Items:/i)).toBeInTheDocument();
   });
 });

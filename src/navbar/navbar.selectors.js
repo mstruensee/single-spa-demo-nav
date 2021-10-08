@@ -1,3 +1,1 @@
-export const navbarSelector=(state)=>{
-    return state.navbar
-}
+export const navbarSelector = ({ navbar }) => navbar;
