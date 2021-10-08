@@ -6,7 +6,7 @@ import { NAVBAR_FETCH } from "./navbar.types";
 export const fetchNavbarEpic = (action$, state$, { getJSON }) =>
   action$.pipe(
     ofType(NAVBAR_FETCH),
-    mergeMap((action) =>
+    mergeMap(() =>
       getJSON("https://6113483089c6d00017ac06c6.mockapi.io/api/v1navbar/")
     ),
     map(setNavbarAction)

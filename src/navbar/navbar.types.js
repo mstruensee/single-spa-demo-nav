@@ -1,2 +1,2 @@
-export const NAVBAR_FETCH = "Fetching tabs";
-export const NAVBAR_SET = "Setting tabs";
+export const NAVBAR_REDUCER = "navbar";
+export const NAVBAR_FETCH = "@fetch->navbar";
