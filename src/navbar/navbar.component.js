@@ -1,34 +1,23 @@
-import React, {useEffect}  from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchNavbarAction } from "./navbar.actions"
-import { navbarSelector } from "./navbar.selectors"
+import React, { Fragment, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNavbarAction } from "./navbar.actions";
+import { navbarSelector } from "./navbar.selectors";
 
 export const NavbarComponent = () => {
-    const dispatch = useDispatch()
-    const navbar = useSelector(state=>{
-        return navbarSelector(state)
-    })
-    useEffect(()=>{
-        console.log('effect run')
-        dispatch(fetchNavbarAction())
-    },[] ) 
-    console.log(navbar)
-    return (
-        <ul>
-            {
-                navbar.map(
-                    (item)=>{
-                        return <li key={item.id}>{item.name}</li>
-                    }
-                )
-            }
-        </ul>
-    )
-}
+  const dispatch = useDispatch();
+  const navbar = useSelector(navbarSelector);
+  useEffect(() => {
+    dispatch(fetchNavbarAction());
+  }, [dispatch]);
 
-// function NavbarComponent(){
-//     return <div>
-//         navbar2
-//     </div>
-// }
-// module.exports = {NavbarComponent:NavbarComponent}
+  return (
+    <Fragment>
+      <div>Navbar Items:</div>
+      <ul>
+        {navbar.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </Fragment>
+  );
+};

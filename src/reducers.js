@@ -1,4 +1,3 @@
-import { objectReducer } from "@wecreatesoftware/redux-higher-order-reducers";
 import { combineReducers } from "redux";
 
 import { connectRouter } from "connected-react-router";
